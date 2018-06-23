@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+    "name": "nasBox",
+	"version": "0.1.0",
+	"description": "The extension for storing text quickly into Nebulas Chain",
+	
+	"icons": {
+        "19": "images/logo.png",
+        "38": "images/logo.png",
+        "128": "images/logo.png"
+    },
+	
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+	"web_accessible_resources": ["inject.js"],
+    "content_scripts": 
+    [
+        {
+            "matches": ["<all_urls>"],
+            
+            "js": ["js/nebPay.js", "contentscript.js"],           
+            
+            "run_at": "document_start"
+        }
+    ],    
+   
+    "permissions": ["contextMenus","activeTab", "declarativeContent", "storage", "tabs"],
+    
+    "homepage_url": "https://www.baidu.com"
+}
